@@ -1,0 +1,49 @@
+{
+  "name": "node-tax-api",
+  "version": "1.0.0",
+  "description": "TypeScript-based library for accessing the free TaxAPI.io API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "jest": {
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "node"
+    ]
+  },
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "test": "jest --coverage --runInBand",
+    "test:watch": "jest --watch --runInBand",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuaslate/node-tax-api.git"
+  },
+  "keywords": [
+    "cache",
+    "typescript",
+    "redis"
+  ],
+  "author": "Joshua Anderson Slate",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshuaslate/node-tax-api/issues"
+  },
+  "homepage": "https://github.com/joshuaslate/node-tax-api#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.0",
+    "@types/request-promise": "^4.1.42",
+    "jest": "^23.4.1",
+    "ts-jest": "^23.0.1",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "request-promise": "^4.2.2"
+  }
+}
