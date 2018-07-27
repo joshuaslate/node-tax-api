@@ -1,3 +1,4 @@
 export { TaxAPIClientOptions } from './TaxAPIClientOptions';
 export { AllowedMethods } from './AllowedMethods';
-export { SalesTaxByZipResponse, VATRatesResponse, VATRatesResponseCountry } from './Responses';
+export { RequestStatuses } from './RequestStatuses';
+export { SalesTaxByZipResponse, VATRatesResponse, VATRatesResponseCountry, VATNumberValidationResponse } from './Responses';

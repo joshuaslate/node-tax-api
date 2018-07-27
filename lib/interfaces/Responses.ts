@@ -21,3 +21,13 @@ export interface VATRatesResponseCountry {
 export interface VATRatesResponse {
   [s: string]: VATRatesResponseCountry;
 };
+
+export interface VATNumberValidationResponse {
+  valid: boolean;
+  format_valid: boolean;
+  query: boolean;
+  country_code: string;
+  vat_number: string;
+  company_name: string;
+  company_address: string;
+};

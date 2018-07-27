@@ -38,12 +38,15 @@
   "homepage": "https://github.com/joshuaslate/node-tax-api#readme",
   "devDependencies": {
     "@types/jest": "^23.3.0",
+    "@types/node-cache": "^4.1.1",
     "@types/request-promise": "^4.1.42",
     "jest": "^23.4.1",
     "ts-jest": "^23.0.1",
     "typescript": "^2.9.2"
   },
   "dependencies": {
-    "request-promise": "^4.2.2"
+    "node-cache": "^4.2.0",
+    "request-promise": "^4.2.2",
+    "type-cacheable": "^0.1.6"
   }
 }
