@@ -1,6 +1,6 @@
 {
   "name": "node-tax-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript-based library for accessing the free TaxAPI.io API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -47,6 +47,6 @@
   "dependencies": {
     "node-cache": "^4.2.0",
     "request-promise": "^4.2.2",
-    "type-cacheable": "^0.1.6"
+    "type-cacheable": "^0.1.7"
   }
 }
