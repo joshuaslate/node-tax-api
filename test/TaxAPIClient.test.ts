@@ -1,15 +1,11 @@
 import TaxAPIClient, { TaxAPIClientOptions } from '../lib';
 
-let client: TaxAPIClient;
 const defaultOpts: TaxAPIClientOptions = {
   cacheEnabled: true,
 };
+const client: TaxAPIClient = new TaxAPIClient(defaultOpts);
 
 describe('TaxAPIClient Tests', () => {
-  beforeEach(() => {
-    client = new TaxAPIClient(defaultOpts);
-  });
-
   it('should get EU VAT rates', async () => {
     const results = await client.getVATRates();
     expect(results).toBeTruthy();

@@ -1,6 +1,7 @@
 import * as request from 'request-promise';
 import * as NodeCache from 'node-cache';
 import { useNodeCacheAdapter, Cacheable, CacheOptions } from 'type-cacheable';
+import { sleep } from './utils';
 import {
   TaxAPIClientOptions,
   AllowedMethods,
@@ -15,6 +16,8 @@ export default class TaxAPIClient {
   private readonly apiVersion: string = '1';
   private readonly apiBase: string = 'taxapi.io/api/';
   private readonly protocol: string = 'https://';
+  private readonly rateLimitedCallsPerSecond: number = 1;
+  private nextRequestAt: number = Date.now();
   public cacheClient: NodeCache.NodeCache | null = null;
 
   constructor(options?: TaxAPIClientOptions) {
@@ -43,8 +46,17 @@ export default class TaxAPIClient {
       uri: this.buildResourceURI(resourcePath),
       json: true,
     };
+    const currentTime = Date.now();
 
+    // If it hasn't been at least a second since the last request, wait until it has been.
+    if (currentTime < this.nextRequestAt) {
+      await sleep(this.nextRequestAt - currentTime);
+    }
+ 
     const result = await request(requestOptions);
+
+    // Next request can be made in one second
+    this.nextRequestAt = Date.now() + (this.rateLimitedCallsPerSecond * 1000);
 
     if (result.status === RequestStatuses.FAILURE) {
       throw new Error(`Error retrieving data from TaxAPI.io: ${result.message}`);
