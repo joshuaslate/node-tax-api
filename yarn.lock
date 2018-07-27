@@ -3236,9 +3236,9 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
-type-cacheable@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/type-cacheable/-/type-cacheable-0.1.7.tgz#1c117fdd00b9cd54d424cddc6dbcbfd0a7f66c0f"
+type-cacheable@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/type-cacheable/-/type-cacheable-0.1.8.tgz#87ff45c4121e44c168b27a850242a39af2bbfd09"
   dependencies:
     "@types/node-cache" "^4.1.1"
     "@types/redis" "^2.8.6"
