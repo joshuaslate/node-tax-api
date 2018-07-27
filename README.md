@@ -2,6 +2,7 @@
 This is a wrapper for the free (but rate-limited) [TaxAPI.io](https://taxapi.io) API that allows users to get up-to-date U.S. sales tax and EU country VAT tax rates. Typings for TypeScript are included and exported.
 
 ## Usage
+If you have ES6 module support, you can do the following:
 ```ts
 import TaxAPIClient, { TaxAPIClientOptions } from 'node-tax-api';
 
@@ -23,6 +24,15 @@ taxClient.getVATRatesByCountryCode('ES').then(response => console.log(response))
 
 // Validate VAT number for a given company
 taxClient.validateVATNumber('GB943684002').then(response => console.log(response));
+```
+
+Otherwise, you will want to do this:
+```js
+const TaxApiClient = require('node-tax-api');
+
+const taxClient = new TaxApiClient.default({ cacheEnabled: true });
+
+// From here, the method usage will look the same.
 ```
 
 ## Caching
